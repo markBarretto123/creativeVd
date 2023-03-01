@@ -100,6 +100,7 @@ nav ul li a:hover {
    nav ul{
     display: block;
     position: absolute;
+    background-color:var(--primary);
     left: 0;
     top: 6.5rem;
     height: 100%;
@@ -114,12 +115,12 @@ nav ul li a:hover {
    }
 
   nav ul li:hover{
-    background-color: var(--primary);
+    background-color: var(--gray);
 
   }
 
   nav ul li:hover a{
-    color: var(--white);
+    color: var(--black);
   }
 }
 
@@ -353,10 +354,6 @@ h3:hover {
 
 
 
-
-
-
-/* SERVICES PAGE */
 
 
 
