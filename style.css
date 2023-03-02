@@ -45,6 +45,9 @@ body {
 .header {
     background-color: var(--black);
     padding: 1rem 0;
+    color: var(--primary);
+    position: fixed;
+    width: 100%;
 }
 
 .header_wrapper{
@@ -111,7 +114,7 @@ nav .open ul {
     position: absolute;
     background-color:var(--primary);
     top: 6.5rem;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     right: -100%;
     text-align: left;
@@ -123,8 +126,14 @@ nav .open ul {
     display: block;
     width: 100%;
     padding: 1rem;
-    border-bottom: 1px solid rgb(201, 188, 188);
-   }
+}
+
+nav ul li {
+    border-bottom: 1px solid rgb(110, 78, 224);
+
+}
+
+
 
   nav ul li:hover{
     background-color: var(--gray);
