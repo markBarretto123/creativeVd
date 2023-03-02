@@ -6,7 +6,9 @@
 
 body {
      font-family: 'Poppins', sans-serif;
+     overflow-x: hidden;
 }
+
 
 :root {
     --primary:#ffa700;
@@ -90,6 +92,7 @@ nav ul li a:hover {
     height: 0.2rem;
     width: 2rem;
     margin-bottom: 0.4rem;
+    border-radius: 0.5rem;
 
 }
 
@@ -97,21 +100,30 @@ nav ul li a:hover {
     .toggle_menu {
         display: block;
     }
+nav .open ul {
+
+    right: -50%;
+    transition: 0.5 ease-in;
+}
+
    nav ul{
     display: block;
     position: absolute;
     background-color:var(--primary);
-    left: 0;
     top: 6.5rem;
     height: 100%;
     width: 100%;
-    text-align: center;
+    right: -100%;
+    text-align: left;
+    transition: 0.5 ease-in;
+
    }
 
    nav ul li a{
     display: block;
     width: 100%;
     padding: 1rem;
+    border-bottom: 1px solid rgb(201, 188, 188);
    }
 
   nav ul li:hover{
