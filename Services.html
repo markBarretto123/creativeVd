@@ -24,13 +24,13 @@
             <h2>Creative <span>Visual</span> Design</h2>
 
         </div>
-        <nav>
+        <nav class="nav">
             <ul>
              
                 <li><a href="index.html">Home</a></li>
                 <li><a href="About.html">About</a></li>
                 <li><a:active href="Services.html">Services</a></li>
-                <li><a href="a">Updates</a></li>
+                <li><a href="Updates.html">Updates</a></li>
                 <li><a href="a">Contact</a></li>
 
 
@@ -39,6 +39,12 @@
 
 
         </nav>
+
+        <div class="toggle_menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         
 
     </header>
@@ -197,6 +203,16 @@
     
     </footer>
     
+    <script>
+        const nav = document.querySelector(".nav");
+        const toggleMenu = document.querySelector(".toggle_menu");
     
+            toggleMenu.addEventListener("click",()=>{
+            toggleMenu.classList.toggle("open");
+            nav.classList.toggle("open");
+        });
+    
+    </script>
+
     </body>
     </html>

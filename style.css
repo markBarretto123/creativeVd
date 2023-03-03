@@ -50,6 +50,7 @@ body {
     width: 100%;
 }
 
+
 .header_wrapper{
     display: flex;
     justify-content: space-between;
@@ -71,7 +72,7 @@ body {
 nav ul{
      list-style: none;
      display: flex;
-     gap: 20px;
+     gap: 30px;
 }
 
 nav ul li a{
@@ -102,8 +103,9 @@ nav ul li a:hover {
 @media(max-width: 768px) {
     .toggle_menu {
         display: block;
+        transition: 0.5s ease-in; /*    */
     }
-nav .open ul {
+nav.open ul {
 
     right: -50%;
     transition: 0.5 ease-in;
@@ -112,7 +114,7 @@ nav .open ul {
    nav ul{
     display: block;
     position: absolute;
-    background-color:var(--primary);
+    background-color:var(--black);
     top: 6.5rem;
     height: 100vh;
     width: 100%;
@@ -126,10 +128,11 @@ nav .open ul {
     display: block;
     width: 100%;
     padding: 1rem;
+    
 }
 
 nav ul li {
-    border-bottom: 1px solid rgb(110, 78, 224);
+    border-bottom: 1px solid var(--white);
 
 }
 
@@ -143,35 +146,52 @@ nav ul li {
   nav ul li:hover a{
     color: var(--black);
   }
+
+  .toggle_menu.open span:nth-child(1){
+    transition: 0.5s ease;
+    transform: translate(-2px, 7.3px) rotate(45deg);
 }
+
+.toggle_menu.open span:nth-child(2){
+   opacity: 0;
+   transition: 0;
+}
+
+.toggle_menu.open span:nth-child(3){
+    transition: 0.5s ease;
+    transform: translate(-2px, -12px) rotate(-45deg);
+}
+
+
+}
+
+
 
 
 
 .banner{
-    padding: 6rem 0;
+    padding: 13rem 0 4rem;
 }
-
 .banner__wrapper{
     display: flex;
-    align-items: center;
-    gap: 4rem;
+    align-items: center ;
 }
-
-.banner img {
+@media (max-width: 998px){
+    .banner__wrapper{
+        flex-direction: column;
+    }
+    .banner img{
+        width: 100% !important; 
+    }
+}
+.banner img{
     width: 40rem;
 }
-
 .banner__content h1{
-   color: var(--primary);
-   font-size: 5rem;;
-   line-height: 1;
+    color: var(--primary);
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1;
 }
-
-.banner__content a:hover {
-
-    color:var(--black)
-}
-
 .banner__content a{
     text-decoration: none;
     background-color: var(--primary);
@@ -180,50 +200,39 @@ nav ul li {
     display: inline-block;
     border-radius: 3rem;
     text-transform: uppercase;
- }
-
- .banner__content p{
-    margin: 2rem 0;
+}
+.banner__content p{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 9rem;
     text-align: justify;
-
- }
-
- .section2{
-    background-color: var(--black);
-    padding: 10rem 0;
 }
 
+.section2{
+    background-color: var(--black);
+    padding: 5rem 0;
+}
 .section2__gridWrapper{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 }
-
 .section2__gridContent{
     text-align: center;
 }
-
 .section2 p{
     text-align: justify;
     padding: 2rem;
     color: var(--white);
     font-size: 15px;
 }
-
 .section2 h3{
-    padding: 1rem;
+    margin-top: 40px;
     color: var(--primary);
 }
-
 .section2 img{
-    padding: 1rem;
+    padding: 0;
 }
-
-.section2 a:hover {
-
-    color:var(--black)
-}
-
 .section2 a{
     text-decoration: none;
     background-color: var(--primary);
@@ -233,6 +242,23 @@ nav ul li {
     border-radius: 3rem;
     text-transform: uppercase;
 }
+@media (max-width: 998px){
+    .section2__gridWrapper{
+        grid-template-columns: 1fr; 
+    }
+    .section2{
+        margin: 0 auto;
+    }
+    .section2 img{
+        margin: 0.3rem;
+    }
+    .section2 p{
+        margin: 0.5rem;
+    }
+    .section2 a{
+        margin: 2rem;
+    }
+} 
 
 .Section_3{
     background-color: var(--white);
@@ -243,13 +269,11 @@ nav ul li {
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
-
 .Section_3 h2{
     margin-top: 70px;
     margin-left: 70px;
     color: var(--primary);
 }
-
 .Section_3 p{
     text-align: justify;
     color: var(--black);
@@ -257,60 +281,109 @@ nav ul li {
     margin-top: 40px;
     margin-left: 70px;
 }
+@media (max-width: 998px){
+    .Section3__gridWrapper{
+        display: block;
+        margin: 0 auto;
+    }
+    .Section3__gridContent img{
+        display: block;
+        margin: 0 auto  ;
+    }
+    .Section3__gridContent h2{
+        display: block;
+        margin: 2rem;
+        text-align: center;
+    }
+    .Section3__gridContent p{
+        display: block;
+        margin: 1rem;
+    }
+    .Section_3{
+        width: 100% !important; 
+    }
+}
+
 
 .trends{
-    padding: 6rem 0;
-    background: var(--black);
+    background-color: var(--black);
+    padding: 7rem;
 }
-
-   .trends h1{
-    
-    color: var(--primary);
+.gridWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
 }
-
-.trends h4{
-
+.cardcontent{
+    background-color: var(--white);
+    border-radius: 2rem;
+    margin-top: 3rem;
+}
+.trends p{
+    color: var(--white);
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+.trends h3{
+    margin-bottom: 5rem;
+    font-size: 25px;
     color: var(--white);
 }
-
-.container{
-      
-        align-items: center;
-    }
-
-
-.gridWrapper{
-
-       
-         
-    gap: 3rem;
-    align-items: center;
-    display: flex;
-    }
-
-.gridCard p{
-
-    color: var(--black);
+.trends h4{
+    padding: 1rem;
+    color: var(--primary);
+    text-align: left;
 }
-
-.gridCard{
-
-    background-color: var(--white);
-    border-radius: 1rem;
-}
-
-.gridCard h3{
-
+.trends h1{
+    font-size: 40px;
     color: var(--primary);
 }
-
-.gridCard h4{
-color: var(--primary);
+.trends img{
+    padding: 0;
+}
+.trends a{
+    text-decoration: none;
+    color: var(--primary);
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 3rem;
+}
+.cardcontent a:hover{
+    color: var(--black);
+}
+.gridCard p{
+    color: var(--black);
+    font-size: 15px;
+    padding: 1rem;
+}
+@media (max-width: 998px){
+    .gridWrapper{
+        display: block;
+        width: 100%;
+    }
+    .trends{
+        width: 100% !important; 
+    }
+    .cardcontent{
+        display: block;
+        width: 100%;
+    }
+    .trends img{
+        width: 100%;
+    }
 }
 
-.cardcontent{
-padding: 1rem;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 .Section_5 {
     background-color: var(--primary);
@@ -592,3 +665,116 @@ h3:hover {
     width: 30rem;
 }
 /*********** END SERVICES BANNER 4 CSS ************/
+
+
+
+
+
+.updateTrends{
+    padding: 10rem 0;
+}
+.updateTrends h2{
+    color: var(--primary);
+}
+.updateTrends_topic ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 12px;
+}
+.updateTrends_topic ul li i{
+    margin-right: 2rem;
+}
+.updateTrends h3{
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.updateTrends a{
+    color: var(--primary);
+    text-decoration: none;
+    margin-top: 2rem;
+    display: block;
+}
+.border-bottom{
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.pb-2{
+    padding-bottom: 2rem;
+}
+.updateTrends_topic{
+    padding: 3rem 0;
+}
+.updateTrends_wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 3rem;
+}
+.updateTrends_topic img{
+    width: 100%;
+}
+.categories ul{
+    list-style: none;
+    margin: 2rem 0      ;
+}
+.categories ul li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+}
+.categories{
+    padding: 2.5rem 0;
+}
+.thePost{
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.recentPost h2{
+    margin-bottom: 3rem;
+}
+.thePost h4{
+    margin-bottom: 1rem;
+}
+.recentPost{
+    padding: 3rem 0;
+}
+.tags{
+    padding: 2rem 0;
+}
+.tags a{    
+    border: 2px solid var(--black);
+    display: inline-block;
+    color: var(--black);
+    padding: 1rem 1.5rem;
+    border-radius: 5rem;
+    margin-right: 1.2rem;
+}
+.bg-dark{
+    background-color: var(--black);
+}
+.t-white{
+    color: var(--white) !important;
+}
+
+@media (max-width: 998px) {
+    .updateTrends_wrapper{
+        grid-template-columns: 1fr;
+    }
+    .updateTrends_topic ul{
+        display: block  ;
+    }
+}
+@media (max-width: 768px) {
+    .footer_wrapper{
+        display: block;
+    }
+    .footer_links{
+        text-align: center;
+    }
+    .footer_links ul{
+        justify-content: center;
+    }
+}
